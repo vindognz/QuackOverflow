@@ -20,7 +20,7 @@ The goal is to take a $2 Kmart rubber duck and turn it into a wirelessly charged
 
 **Why ESP32-C3?** Overkill for simple LED control, but leaves the door open for future features (WiFi control, IDE integration, etc.). For now however, it will just run the LEDs, but the capability is there if I choose to expand later.
 
-**5 LEDs**: With my duck only having ~200mL internal volume, space is tight. Five WS2812B addressable LEDs provides enough glow without draining the battery too fast.
+**5 LEDs**: With my duck only having ≈200mL internal volume, space is tight. Five WS2812B addressable LEDs provides enough glow without draining the battery too fast.
 
 ### Power Management (sleep states)
 * **On charging pad:** Duck detects incoming Qi power and enters sleep mode (all LEDs off, low power draw.)
@@ -29,7 +29,7 @@ The goal is to take a $2 Kmart rubber duck and turn it into a wirelessly charged
 No physical on/off switches, just pick him up to activate.
 
 ### Power Flow:
-* Qi receiver provides ~5V to TP4056 charging module
+* Qi receiver provides ≈5V to TP4056 charging module
 * TP4056 manages LiPo charging and protection
 * Battery outputs 3.7V to ESP32-C3
 * ESP32 drives WS2812B LEDs (data pin + power)
@@ -39,14 +39,16 @@ No physical on/off switches, just pick him up to activate.
 ### Rough measurements:
 Thanks to rigorous scientific testing (shoutout to Mum for dunking the duck in a measuring jug while I was at school), we know:
 
-* External volume: ~300mL
-* Estimated internal volume: ~200mL (accounting for 2-3mL PVC walls)
+* External volume: ≈300mL
+* Estimated internal volume: ≈200mL (accounting for 2-3mL PVC walls)
 This should give us just enough space for a flat LiPo (500-800mAh range), the PCB, and components.
 
 ### Next Steps:
 1. **Component selection:** Find specific numbers for ESP32-C3, LEDs, battery, Qi coils, etc.
 2. **Schematic design:** Map out the full circuit in Kicad
-3. **PCB Layout:** Design the board to fit the ducks base (~8cm diameter)
-4. **3D model charging base:** "DEBUGGING IN PROCESS" stand design in FreeCad.![quackoverflowsystemarchi.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjQwNCwicHVyIjoiYmxvYl9pZCJ9fQ==--5ae0a494c3c1d1885d311b5ed88798e7d1a9d288/quackoverflowsystemarchi.png)
+3. **PCB Layout:** Design the board to fit the ducks base (≈8cm diameter)
+4. **3D model charging base:** "DEBUGGING IN PROCESS" stand design in FreeCad.
+
+![quackoverflowsystemarchi.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjQwNCwicHVyIjoiYmxvYl9pZCJ9fQ==--5ae0a494c3c1d1885d311b5ed88798e7d1a9d288/quackoverflowsystemarchi.png)
   
 
