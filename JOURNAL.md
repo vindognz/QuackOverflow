@@ -52,7 +52,7 @@ This should give us just enough space for a flat LiPo (500-800mAh range), the PC
 ![quackoverflowsystemarchi.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjQwNCwicHVyIjoiYmxvYl9pZCJ9fQ==--5ae0a494c3c1d1885d311b5ed88798e7d1a9d288/quackoverflowsystemarchi.png)
   
 
-## 10/18/2025 - Schematic Completed.  
+## 10/18/2025 8 AM - Schematic Completed.  
 
 ### Progress:
 Finished the full circuit schematic in KiCad today. All major components are connected and ready for PCB design!
@@ -86,4 +86,34 @@ Finished the full circuit schematic in KiCad today. All major components are con
 
 ![image.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjcyMCwicHVyIjoiYmxvYl9pZCJ9fQ==--e6df71838b788e4c8031d42606030debc354116a/image.png)
   
+
+## 10/18/2025 10 AM - PCB Layout Completed!  
+
+### Board Design:
+Finished the PCB layout. 8cm diameter circular board to fit inside the duck body at battery height.
+
+### Component placement strategy:
+* **Center:** ESP32-C3-MINI-1 with 'Antenna Area' kept clear.
+* **Around ESP32:** TP4056 charging module, decoupling caps, resistors and battery cell
+* **Ring formation:** 5 LEDs arranged around the perimeter
+
+### LED Arrangement:
+Originally planned to have LEDs evenly distributed around the circle, but pivoted to:
+* **Top head area:** 1 LED (D2)
+* **Front left/right:** 2 LEDs (D1, D3)
+* **Back left/right:** 2 LEDs (D4, D5)
+This should create a more even lighting effect, and ensure the head is well lit.
+
+### Routing challenges:
+The main challenge was minimizing the length of tracks in the LED daisy chain, since data must flow in order (GPIO8 -> D1 -> D2 -> D3 -> D4 -> D5). My solution was to segment into two zones - the top 3 LEDs and the bottom 2. This allowed me to minimize the number of long tracks by creating one positive, ground and data line, then hijacking the positive and GND from the charging module. This left only one really long track, connecting D3 and D4.
+
+Power distribution was straightforward, just connecting VBAT and GND to each component and placing two decoupling caps near the ESP32 as good practice.
+
+### Next Steps:
+1. Export Gerber files for PCB fabrication
+2. Create a BOM
+3. 3D model stand
+4. Write firmware for ESP32
+
+![image.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6Mjc1NywicHVyIjoiYmxvYl9pZCJ9fQ==--03886637dca32c8294ab8876c87e079ba7a4c186/image.png)  
 
