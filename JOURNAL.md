@@ -52,3 +52,38 @@ This should give us just enough space for a flat LiPo (500-800mAh range), the PC
 ![quackoverflowsystemarchi.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjQwNCwicHVyIjoiYmxvYl9pZCJ9fQ==--5ae0a494c3c1d1885d311b5ed88798e7d1a9d288/quackoverflowsystemarchi.png)
   
 
+## 10/18/2025 - Schematic Completed.  
+
+### Progress:
+Finished the full circuit schematic in KiCad today. All major components are connected and ready for PCB design!
+
+### Final component choices:
+* **ESP32-C3-Mini-1** - main microcontroller
+* **5x WS2812B LEDs** - daisy-chained addressable RGB
+* **TP4056-42-ESOP8** - LiPo charging IC
+* **Qi reciever module** - Wireless power input
+* **LiPo battery** - 500-800mAh (exact model TBD)
+
+### Key design features:
+* 330Ω resistor on LED data line for signal protection
+* 100nF decoupling caps near ESP32 and LED chain
+* CHRG pin from TP4056 connected to GPIO9 for charge detection
+* EN pin pulled high via 10kΩ resistor
+
+### PCB Design Strategy (Vertical layout):
+
+* Battery sits on the 2cm floor
+* PCB mounts on top of battery (~2cm above floor)
+* At this height, the duck body is ~9cm x 8.5cm oval
+* PCB will be an oval shape (~8cm x 7cm) to fit with clearance
+
+### Next up:
+1. Assign footprints to all the schematic components.
+2. Design the PCB shape to fit the duck.
+3. Place components.
+4. Route traces.
+5. Start working on 3D models!
+
+![image.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjcyMCwicHVyIjoiYmxvYl9pZCJ9fQ==--e6df71838b788e4c8031d42606030debc354116a/image.png)
+  
+
